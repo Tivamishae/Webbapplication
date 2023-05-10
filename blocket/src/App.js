@@ -1,4 +1,3 @@
-import "./App.css";
 import Ware from "./components/Ware/Ware.js";
 
 function App() {

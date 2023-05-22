@@ -44,8 +44,7 @@ function App() {
               concepts: "H&M MAN",
             },
             headers: {
-              "X-RapidAPI-Key":
-                "332b186032msh77228ab8e6548ecp11d03ejsne635174b50d5",
+              "X-RapidAPI-Key": "",
               "X-RapidAPI-Host": "apidojo-hm-hennes-mauritz-v1.p.rapidapi.com",
             },
           }

@@ -1,0 +1,24 @@
+.goLeft {
+  float: left;
+  width: 80px;
+  height: 40px;
+  border: none;
+}
+
+.goRight {
+  float: right;
+  width: 80px;
+  height: 40px;
+  border: none;
+}
+
+.currentPage {
+  width: 10%;
+  margin: auto;
+}
+
+.pageBottomPartContainer {
+  width: 100%;
+  border: none;
+  background-color: white;
+}

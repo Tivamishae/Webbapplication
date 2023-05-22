@@ -3,7 +3,10 @@ import "./SearchBar.css";
 const SearchBar = () => {
   return (
     <div>
-      <input></input>
+      <button className="searchBarContainerButton">
+        <div className="searchText">Search</div>
+        <input className="searchBar"></input>
+      </button>
     </div>
   );
 };

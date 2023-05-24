@@ -1,0 +1,24 @@
+.createUsername {
+  width: 30vh;
+}
+
+.createEmail {
+  width: 30vh;
+}
+
+.createPassword {
+  width: 30vh;
+}
+
+.createCopyPassword {
+  width: 30vh;
+}
+
+.createAccountFormTextUpper {
+  font-size: 2rem;
+  color: black;
+}
+
+.createAccountFormTextLower {
+  color: black;
+}

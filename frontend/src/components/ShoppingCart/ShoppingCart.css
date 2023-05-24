@@ -1,0 +1,18 @@
+.ShoppingCartScreen {
+  width: 500px;
+  height: 700px;
+  position: fixed;
+  background-color: white;
+}
+
+.YourShoppingCart {
+  font-size: 2rem;
+}
+
+.ShoppingCartWareContainer {
+  width: 470px;
+  height: 450px;
+  background-color: white;
+  border: solid;
+  overflow: auto;
+}

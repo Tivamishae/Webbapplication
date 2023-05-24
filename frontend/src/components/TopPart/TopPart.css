@@ -6,11 +6,11 @@
   position: fixed;
 }
 
-.menuIcon {
+.shoppingCartIcon {
   float: left;
   height: 50px;
-  width: 50px;
-  background-image: url("../../Images/Menu_Icon.jpeg");
+  width: 61px;
+  background-image: url("../../Images/Shopping_Cart.jpeg");
   background-size: cover;
   background-color: black;
   border: none;

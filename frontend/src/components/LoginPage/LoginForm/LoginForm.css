@@ -1,0 +1,48 @@
+.wrapperLoginPage {
+  min-width: 60vh;
+  min-height: 60vh;
+  border-radius: 50px;
+  background-color: transparent;
+  opacity: 100%;
+  border-width: 20px;
+}
+
+.loginButton {
+  font-size: 1.1rem;
+}
+
+.loginPassword {
+  font-size: 1.3rem;
+}
+
+.loginUsernameOrEmail {
+  font-size: 1.3rem;
+}
+
+.seperator {
+  height: 20px;
+}
+
+.seperatorBig {
+  height: 40px;
+}
+
+.seperatorSmall {
+  height: 10px;
+}
+
+.pushUpButton {
+  width: 100%;
+  height: 15vh;
+  background-color: transparent;
+  border: none;
+}
+
+.loginFormTextUpper {
+  font-size: 2.2rem;
+  color: black;
+}
+
+.loginFormTextLower {
+  color: black;
+}

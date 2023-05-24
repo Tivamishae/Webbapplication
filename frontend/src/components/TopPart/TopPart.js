@@ -1,27 +1,24 @@
 import "./TopPart.css";
-import { useState } from "react";
 import SearchBar from "./SearchBar/SearchBar";
-import DropDown from "./DropDown/DropDown";
 
-const TopPart = () => {
-  const [renderDropDown, setRenderDropDown] = useState(false);
-
-  const changeRenderDropDown = () => {
-    setRenderDropDown(!renderDropDown);
-  };
-
+const TopPart = (props) => {
   return (
     <div>
       <button className="containerButton">
         <button className="wholeDropDownContainer">
           <button
-            onClick={() => changeRenderDropDown()}
-            className="menuIcon"
+            onClick={() => props.changeRenderShoppingCart()}
+            className="shoppingCartIcon"
           ></button>
-          {renderDropDown ? <DropDown></DropDown> : null}
         </button>
-        <button className="yourAccontIcon"></button>
-        <SearchBar></SearchBar>
+        <button
+          onClick={() => props.renderAccountPageFunc()}
+          className="yourAccontIcon"
+        ></button>
+        <SearchBar
+          searchString={props.searchString}
+          handleSearchChange={props.handleSearchChange}
+        ></SearchBar>
       </button>
     </div>
   );

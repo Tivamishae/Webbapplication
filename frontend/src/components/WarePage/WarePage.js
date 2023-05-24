@@ -11,7 +11,7 @@ function WarePage(props) {
     setCurrentWareImage({
       backgroundImage: `url(${props.wareProp.allArticleBaseImages[currentWareIndex]})`,
     });
-  }, [currentWareImage]);
+  }, [props.wareProp]);
 
   const changeWareImage = (x) => {
     const allImagesArrayLength = props.wareProp.allArticleBaseImages.length;
@@ -37,7 +37,14 @@ function WarePage(props) {
     }
   };
 
-  console.log(props.wareProp);
+  const getCurrentWare = () => {
+    const currentWare = {
+      wareName: props.wareProp.name,
+      warePrice: props.wareProp.price.value,
+      wareImage: currentWareImage,
+    };
+    return currentWare;
+  };
 
   return (
     <div className="WarePageWrapper">
@@ -56,8 +63,16 @@ function WarePage(props) {
             {props.wareProp.price.value} USD
           </div>
           <br></br>
+          <button
+            onClick={() => props.addWareToShoppingCart(getCurrentWare())}
+            className="AddToCartButton"
+          >
+            Add to cart
+          </button>
           <br></br>
         </button>
+        <br></br>
+        <br></br>
         <button className="WarePageLowerContainer">
           <button
             onClick={() => changeWareImage(-1)}

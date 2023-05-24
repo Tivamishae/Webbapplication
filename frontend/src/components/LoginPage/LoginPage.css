@@ -1,0 +1,15 @@
+.textWelcome {
+  font-size: 3rem;
+}
+
+.textLogin {
+  font-size: 2rem;
+}
+
+.loginPageContainer {
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  background-image: url("../../Images/Login_Background.jpeg");
+  border: none;
+}

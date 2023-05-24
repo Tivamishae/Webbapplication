@@ -1,0 +1,46 @@
+.InsideShoppingCartWareContainer {
+  width: 450px;
+  height: 140px;
+  background-color: white;
+  border: solid;
+}
+
+.InsideShoppingCartWareImage {
+  width: 134px;
+  height: 134px;
+  float: left;
+  background-size: cover;
+  border: none;
+}
+
+.InsideShoppingCartWareInformationAndButtons {
+  float: right;
+  width: 301px;
+  height: 134px;
+  border: none;
+}
+
+.InsideShoppingCartWareButtons {
+  float: right;
+  width: 70px;
+  height: 128px;
+  border: none;
+}
+
+.InsideShoppingCartWareInformation {
+  float: left;
+  width: 170px;
+  height: 128px;
+  border: none;
+}
+
+.WareQuantity {
+  width: 40px;
+}
+
+.RemoveWareButton {
+  font-size: 0.7rem;
+  background-color: white;
+  border: solid;
+  border-radius: 5px;
+}

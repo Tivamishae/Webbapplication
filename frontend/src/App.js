@@ -1,5 +1,6 @@
 import TopPart from "./components/TopPart/TopPart.js";
 import Page from "./components/Page/Page.js";
+import WarePage from "./components/WarePage/WarePage.js";
 import "./App.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -7,6 +8,8 @@ import { useEffect, useState } from "react";
 function App() {
   const [pageProps, setPageProps] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
+  const [renderWarePage, setRenderWarePage] = useState(false);
+  const [warePageProp, setWarePageProp] = useState();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -44,7 +47,8 @@ function App() {
               concepts: "H&M MAN",
             },
             headers: {
-              "X-RapidAPI-Key": "",
+              "X-RapidAPI-Key":
+                "332b186032msh77228ab8e6548ecp11d03ejsne635174b50d5",
               "X-RapidAPI-Host": "apidojo-hm-hennes-mauritz-v1.p.rapidapi.com",
             },
           }
@@ -63,12 +67,22 @@ function App() {
     setCurrentPage(currentPage + change);
   };
 
+  const renderWarePageFunc = (wareState) => {
+    setWarePageProp(wareState);
+    setRenderWarePage(true);
+  };
+
+  const removeWarePage = () => {
+    setRenderWarePage(false);
+  };
+
   const renderedPages = pageProps.map((pageContent, index) => (
     <div
       key={index}
       style={{ display: currentPage === index ? "block" : "none" }}
     >
       <Page
+        renderWarePageFunc={renderWarePageFunc}
         amountOfPages={pageProps.length}
         changePage={changePage}
         pageIndex={index + 1}
@@ -79,10 +93,17 @@ function App() {
 
   return (
     <div className="App">
-      <TopPart></TopPart>
-      <button className="behindTopPart"></button>
-      {renderedPages}
-      <button className="behindTopPart"></button>
+      {renderWarePage ? (
+        <WarePage
+          removeWarePage={removeWarePage}
+          wareProp={warePageProp}
+        ></WarePage>
+      ) : null}
+      <div>
+        <TopPart></TopPart>
+        <button className="behindTopPart"></button>
+        {renderedPages}
+      </div>
     </div>
   );
 }

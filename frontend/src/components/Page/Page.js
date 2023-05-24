@@ -7,7 +7,10 @@ function Page(props) {
       {props.pageContent.map((ware, index) => {
         return (
           <div key={index}>
-            <Ware wareProp={ware}></Ware>
+            <Ware
+              renderWarePageFunc={props.renderWarePageFunc}
+              wareProp={ware}
+            ></Ware>
           </div>
         );
       })}

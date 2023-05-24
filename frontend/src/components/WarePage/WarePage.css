@@ -1,0 +1,53 @@
+.WarePageContainer {
+  width: 600px;
+  height: 55vh;
+  background-color: white;
+  position: fixed;
+}
+
+.WarePageWrapper {
+  text-align: center;
+}
+
+.WarePageImages {
+  width: 200px;
+  height: 200px;
+  float: left;
+  background-size: cover;
+  border: solid;
+}
+
+.WarePageLowerContainer {
+  height: 1px;
+  float: left;
+  width: 100%;
+  background-color: white;
+  border: none;
+}
+
+.WarePageInformationContainer {
+  height: 200px;
+  width: 300px;
+  background-color: white;
+  border: none;
+}
+
+.CurrentWareName {
+  font-size: 1.5rem;
+}
+
+.PushUpWarePage {
+  width: 100%;
+  height: 30px;
+  background-color: white;
+  border: none;
+}
+
+.WarePageInformation {
+  font-size: 1.3rem;
+}
+
+.GoBackButtonWarePage {
+  float: right;
+  font-size: 1.2rem;
+}

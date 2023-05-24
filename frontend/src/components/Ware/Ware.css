@@ -9,10 +9,46 @@
   float: left;
   width: 140px;
   height: 140px;
-  background-image: url("../../Images/Out_Of_Stock.png");
   background-size: cover;
   background-color: white;
   border-style: solid;
   border-width: 0px;
   border-right-width: 2px;
+}
+
+.WareInformation {
+  float: right;
+  width: 100px;
+  height: 140px;
+  background-color: white;
+}
+
+.WarePrice {
+  font-size: 1.2rem;
+  float: right;
+}
+
+.WareName {
+  font-size: 1.2 rem;
+  float: right;
+}
+
+.PushUpSmall {
+  height: 20px;
+  border: none;
+  background-color: white;
+}
+
+.WarePriceContainer {
+  background-color: white;
+  border-bottom: none;
+  border-right: none;
+  border-left: none;
+}
+
+.ShowWare {
+  height: 140px;
+  width: 200px;
+  background-color: rgb(235, 232, 232);
+  border: none;
 }

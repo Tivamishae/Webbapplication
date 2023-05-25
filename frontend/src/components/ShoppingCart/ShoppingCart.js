@@ -15,29 +15,33 @@ const ShoppingCart = (props) => {
   };
 
   const createOrder = () => {
-    const combinedArray = Array.from(
-      props.shoppingCartWares,
-      (shoppingCartWare, index) => [
-        shoppingCartWare.wareImage.backgroundImage,
-        quantityArray[index],
-      ]
-    );
-    console.log(combinedArray);
-    const orderObject = {
-      type: "insertOrder",
-      orderPartsArray: combinedArray,
-      userID: props.userID,
-    };
-    axios
-      .post("http://localhost:8080/Webbapplication/backend/", orderObject)
-      .then((response) => {
-        const sessionResponse = response.data;
-        if (sessionResponse.success) {
-          console.log(sessionResponse.success);
-          alert("Order successfully created");
-        }
-      })
-      .catch((error) => alert(error));
+    if (!(props.shoppingCartWares.length === 0)) {
+      const combinedArray = Array.from(
+        props.shoppingCartWares,
+        (shoppingCartWare, index) => [
+          shoppingCartWare.wareImage.backgroundImage,
+          quantityArray[index],
+        ]
+      );
+      console.log(combinedArray);
+      const orderObject = {
+        type: "insertOrder",
+        orderPartsArray: combinedArray,
+        userID: props.userID,
+      };
+      axios
+        .post("http://localhost:8080/Webbapplication/backend/", orderObject)
+        .then((response) => {
+          const sessionResponse = response.data;
+          if (sessionResponse.success) {
+            console.log(sessionResponse.success);
+            alert("Order successfully created");
+          }
+        })
+        .catch((error) => alert(error));
+    } else {
+      alert("Please put atleast one item in the shoppingcart before ordering");
+    }
   };
 
   return (

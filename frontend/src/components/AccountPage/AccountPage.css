@@ -34,6 +34,7 @@
   float: right;
   width: 50%;
   height: 400px;
+  overflow: auto;
 }
 
 .GoBack {
@@ -46,6 +47,18 @@
 .GoBackContainer {
   float: right;
   width: 150px;
+  border: none;
+  background-color: transparent;
+}
+
+.ListOfOrdersTitle {
+  font-size: 1.5rem;
+  float: right;
+}
+
+.ListOfOrdersTitleContainer {
+  width: 82%;
+  float: left;
   border: none;
   background-color: transparent;
 }

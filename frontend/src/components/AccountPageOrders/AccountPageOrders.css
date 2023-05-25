@@ -1,0 +1,25 @@
+.AccountPageOrderContainer {
+  width: 100%;
+  height: 150px;
+}
+
+.AccountPageOrderImage {
+  height: 100%;
+  width: 155px;
+  float: left;
+  background-size: cover;
+}
+
+.AccountPageInformationAndButtons {
+  height: 100%;
+  width: calc(100% - 155px);
+  border: none;
+  background-color: transparent;
+}
+
+.AccountPageInformation {
+  height: 100px;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+}

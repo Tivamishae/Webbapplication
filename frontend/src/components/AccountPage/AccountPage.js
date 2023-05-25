@@ -1,6 +1,7 @@
 import "./AccountPage.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import AccountPageOrders from "../AccountPageOrders/AccountPageOrders";
 
 const AccountPage = (props) => {
   const [allOrders, setAllOrders] = useState([]);
@@ -12,12 +13,21 @@ const AccountPage = (props) => {
         userID: props.userID,
       })
       .then((response) => {
-        const sessionResponse = response.data;
-        if (sessionResponse.success) {
-          console.log(sessionResponse);
-          setAllOrders(sessionResponse.data);
-        } else {
-          console.log(sessionResponse);
+        let sessionResponse = [];
+        sessionResponse = response.data;
+        if (sessionResponse !== undefined || sessionResponse === []) {
+          const finalArray = sessionResponse.reduce((result, orderPart) => {
+            const foundArray = result.find(
+              (arr) => arr[0].FullOrderID === orderPart.FullOrderID
+            );
+            if (foundArray) {
+              foundArray.push(orderPart);
+            } else {
+              result.push([orderPart]);
+            }
+            return result;
+          }, []);
+          setAllOrders(finalArray);
         }
       })
       .catch((error) => alert(error));
@@ -33,8 +43,21 @@ const AccountPage = (props) => {
           </button>
         </button>
         <button className="LowerContainer">
-          <button className="ListOfOrders"></button>
+          <button className="ListOfOrdersTitleContainer">
+            <div className="ListOfOrdersTitle">Your Orders:</div>
+          </button>
+          <button className="ListOfOrders">
+            {allOrders.map((order, index) => {
+              return (
+                <div key={index}>
+                  <AccountPageOrders orderProp={order}></AccountPageOrders>
+                </div>
+              );
+            })}
+          </button>
           <div className="UserInformationTitle">Your username:</div>
+          <br></br>
+          <br></br>
           <br></br>
           <br></br>
           <div className="UserInformation">{props.username}</div>

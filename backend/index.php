@@ -9,6 +9,7 @@ $db = new PDO('sqlite:Webbapplication.db');
 
 include './Components/userHandling.php';
 include './Components/OrderHandling.php';
+include './Components/email.php';
 
 
 
@@ -44,5 +45,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $orderPartsArray = $data->orderPartsArray;
             insertFullOrder($db, $userID);
             insertOrderParts($db, $userID, $orderPartsArray);
+            $user = retrieveUserInformationUserID($db, $userID);
+            $userEmail = $user['Email'];
+            sendEmail($userEmail, "Apollo Order", "Hello there, you have just made an order on Apollo.");
     }
 }

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./ShoppingCart.css";
 import axios from "axios";
 import ShoppingCartWare from "./ShoppingCartWare/ShoppingCartWare";

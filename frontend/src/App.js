@@ -45,7 +45,7 @@ function App() {
     setPageProps(processedData);
   }, [fullWareObjectArray]);
 
-  /* useEffect(() => {
+  useEffect(() => {
     const retrieveHM_API = () => {
       axios
         .get(
@@ -60,8 +60,7 @@ function App() {
               concepts: "H&M MAN",
             },
             headers: {
-              "X-RapidAPI-Key":
-                "",
+              "X-RapidAPI-Key": "",
               "X-RapidAPI-Host": "apidojo-hm-hennes-mauritz-v1.p.rapidapi.com",
             },
           }
@@ -72,7 +71,7 @@ function App() {
         });
     };
     retrieveHM_API();
-  }, []); */
+  }, []);
 
   const attemptLogin = (loginObject) => {
     axios

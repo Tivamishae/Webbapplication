@@ -87,6 +87,15 @@ function retrieveUserInformationUsername($db, $username) {
     return $row;
 }
 
+function retrieveUserInformationUserID($db, $userID) {
+    $db_user = $db->prepare("SELECT * FROM Users WHERE id = :userID");
+    $db_user->bindParam(':userID', $userID);
+    $db_user->execute();
+    $row = $db_user->fetch();
+
+    return $row;
+}
+
 function retrieveUserInformationEmail($db, $email) {
     $db_user = $db->prepare("SELECT * FROM Users WHERE Email = :email");
     $db_user->bindParam(':email', $email);

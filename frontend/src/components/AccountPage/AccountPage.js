@@ -38,6 +38,10 @@ const AccountPage = (props) => {
       <button className="AccContainerButton">
         <div className="AccountDetailsText">Account details:</div>
         <button className="GoBackContainer">
+          <button onClick={() => props.logOut()} className="GoBack">
+            Log out
+          </button>
+          <button className="Seperator"></button>
           <button onClick={props.goBack} className="GoBack">
             Go back
           </button>

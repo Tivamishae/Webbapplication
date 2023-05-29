@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         case 'insertOrder':
             $userID = $data->userID;
             $orderPartsArray = $data->orderPartsArray;
-            insertFullOrder($db, $userID);
+            echo insertFullOrder($db, $userID);
             insertOrderParts($db, $userID, $orderPartsArray);
             $user = retrieveUserInformationUserID($db, $userID);
             $userEmail = $user['Email'];

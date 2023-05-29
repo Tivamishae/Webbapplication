@@ -28,9 +28,15 @@ function getPartOrders($db, $fullOrderIds) {
 }
 
 function insertFullOrder($db, $userID) {
+    try {
         $prepIns = $db->prepare("INSERT INTO FullOrder(UserID) VALUES(:userID)");
         $prepIns->bindParam(':userID', $userID);
         $prepIns->execute();
+        return "Your order was successful";
+    }
+    catch (Exception $e) {
+        return "Your order was unsuccessful";
+    }
 }
 
 function insertOrderParts($db, $userID, $orderPartsArray) {

@@ -33,9 +33,9 @@ const ShoppingCart = (props) => {
         .post("http://localhost:8080/Webbapplication/backend/", orderObject)
         .then((response) => {
           const sessionResponse = response.data;
-          if (sessionResponse.success) {
-            console.log(sessionResponse.success);
-            alert("Order successfully created");
+          alert(sessionResponse);
+          if (sessionResponse === "Your order was successful") {
+            props.emptyShoppingCart();
           }
         })
         .catch((error) => alert(error));

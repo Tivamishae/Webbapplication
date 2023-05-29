@@ -46,7 +46,8 @@
 
 .GoBackContainer {
   float: right;
-  width: 150px;
+  width: 200px;
+  height: 50px;
   border: none;
   background-color: transparent;
 }
@@ -61,4 +62,11 @@
   float: left;
   border: none;
   background-color: transparent;
+}
+.Seperator {
+  width: 20%;
+  float: left;
+  height: 30px;
+  border: none;
+  background-color: none;
 }

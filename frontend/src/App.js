@@ -123,6 +123,7 @@ function App() {
 
   const handleSearchChange = (event) => {
     setSearchString(event.target.value);
+    setCurrentPage(0);
   };
 
   const changeRenderShoppingCart = () => {
@@ -171,12 +172,38 @@ function App() {
     setRenderAccountPage(false);
   };
 
+  const emptyShoppingCart = () => {
+    setShoppingCartWares([]);
+  };
+
+  const logOut = () => {
+    axios
+      .post("http://localhost:8080/Webbapplication/backend/", {
+        type: "logoutRequest",
+      })
+      .then((response) => {
+        const sessionResponse = response.data;
+        if (sessionResponse.success) {
+          console.log(sessionResponse.success);
+          setCurrentPage(0);
+          setSearchString("");
+          setShoppingCartWares([]);
+          setRenderAccountPage(false);
+          setIsLoggedIn(false);
+        } else {
+          alert(sessionResponse);
+        }
+      })
+      .catch((error) => alert(error));
+  };
+
   return (
     <div className="App">
       {isLoggedIn ? (
         <div>
           {renderAccountPage ? (
             <AccountPage
+              logOut={logOut}
               userID={userID}
               goBack={falsifyRenderAccountPageFunc}
               userEmail={userEmail}
@@ -186,6 +213,7 @@ function App() {
             <div>
               {renderShoppingCart ? (
                 <ShoppingCart
+                  emptyShoppingCart={emptyShoppingCart}
                   userID={userID}
                   removeWareFromShoppingCart={removeWareFromShoppingCart}
                   shoppingCartWares={shoppingCartWares}

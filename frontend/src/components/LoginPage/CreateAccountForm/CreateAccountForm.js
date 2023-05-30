@@ -36,7 +36,8 @@ const CreateAccountForm = (props) => {
       response = response + "\n" + passwordErrorCopy;
     }
 
-    const passwordPattern = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])[0-9A-Za-z!@#$%]+$/;
+    const passwordPattern =
+      /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])[0-9A-Za-z!@#$%]{8,20}$/;
     if (!password.match(passwordPattern)) {
       response = response + "\n" + passwordErrorContent;
     }
